@@ -219,9 +219,10 @@ Detaylar için `DEPLOYMENT.md` dosyasına bakın.
 
 ## 📞 İletişim
 
-Sorularınız için: info@turnikepro.com
+Sorularınız için: muhammedsenceroztrk@gmail.com
 
 ## 📄 Lisans
 
 Bu proje örnek amaçlı oluşturulmuştur.
 
+Muhammed Sencer ÖZTÜRK - Full Stack Developer
