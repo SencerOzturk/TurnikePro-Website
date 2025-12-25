@@ -14,8 +14,8 @@ function setLanguage(lang) {
 function updatePageLanguage() {
     const elements = document.querySelectorAll('[data-tr], [data-en]');
     elements.forEach(element => {
-        const text = currentLanguage === 'tr' 
-            ? element.getAttribute('data-tr') 
+        const text = currentLanguage === 'tr'
+            ? element.getAttribute('data-tr')
             : element.getAttribute('data-en');
         if (text) {
             element.textContent = text;
@@ -39,6 +39,88 @@ function updatePageLanguage() {
     }
 }
 
+// Fallback visuals for when API is empty/unavailable
+const fallbackProducts = [
+    {
+        category: { tr: 'Tripod', en: 'Tripod' },
+        name: { tr: 'Pulse Tripod', en: 'Pulse Tripod' },
+        description: {
+            tr: 'Yoğun insan trafiği için paslanmaz çelik gövde ve çift yönlü geçiş desteği',
+            en: 'Stainless steel body with bi-directional flow for heavy traffic areas'
+        },
+        technicalSpecs: {
+            tr: 'Paslanmaz çelik | RFID / QR / Kart desteği | 60 kişi/dk',
+            en: 'Stainless steel | RFID / QR / Card ready | 60 ppl/min'
+        },
+        imageUrl: 'https://source.unsplash.com/featured/?tripod-turnstile&sig=11'
+    },
+    {
+        category: { tr: 'Hızlı Geçiş', en: 'Speed Gate' },
+        name: { tr: 'Aurora Flow', en: 'Aurora Flow' },
+        description: {
+            tr: 'Cam kanatlı, sessiz ve titreşimsiz motor sistemi ile premium görünüm',
+            en: 'Glass wing, silent drive and premium look for modern lobbies'
+        },
+        technicalSpecs: {
+            tr: 'Cam kanat | Fırçasız motor | 0.4 sn açılma',
+            en: 'Glass wings | Brushless motor | 0.4s opening'
+        },
+        imageUrl: 'https://source.unsplash.com/featured/?turnstile,access-control&sig=12'
+    },
+    {
+        category: { tr: 'Tam Boy', en: 'Full Height' },
+        name: { tr: 'Fortress 360', en: 'Fortress 360' },
+        description: {
+            tr: 'Perimetre güvenliği için 360° çelik kafes yapısı',
+            en: '360° steel cage architecture for perimeter security'
+        },
+        technicalSpecs: {
+            tr: 'Galvanizli çelik | IP54 | Çift yönlü erişim',
+            en: 'Galvanized steel | IP54 | Bi-directional'
+        },
+        imageUrl: 'https://source.unsplash.com/featured/?full-height-turnstile&sig=13'
+    },
+    {
+        category: { tr: 'Swing Gate', en: 'Swing Gate' },
+        name: { tr: 'Velvet Prime', en: 'Velvet Prime' },
+        description: {
+            tr: 'Geniş kanatlı, temassız geçiş için şık tasarım',
+            en: 'Wide-wing, contactless access with elegant design'
+        },
+        technicalSpecs: {
+            tr: 'Cam kanat | Engelli geçiş genişliği | Sessiz çalışma',
+            en: 'Glass wing | ADA width | Silent operation'
+        },
+        imageUrl: 'https://source.unsplash.com/featured/?swing-gate,turnstile&sig=14'
+    },
+    {
+        category: { tr: 'Endüstriyel', en: 'Industrial' },
+        name: { tr: 'Core Steel', en: 'Core Steel' },
+        description: {
+            tr: 'Dış ortam uyumlu, IP54 korumalı endüstriyel tripod',
+            en: 'Outdoor-ready industrial tripod with IP54 protection'
+        },
+        technicalSpecs: {
+            tr: 'IP54 | -20°C / +60°C | Ağır hizmet motor',
+            en: 'IP54 | -20°C / +60°C | Heavy-duty motor'
+        },
+        imageUrl: 'https://source.unsplash.com/featured/?industrial-turnstile&sig=15'
+    },
+    {
+        category: { tr: 'Çift Kanat', en: 'Dual Wing' },
+        name: { tr: 'Guardia Twin', en: 'Guardia Twin' },
+        description: {
+            tr: 'Kritik alanlar için çift yönlü yüksek güvenlik kontrolü',
+            en: 'High-security, bi-directional control for critical areas'
+        },
+        technicalSpecs: {
+            tr: 'Çelik gövde | Acil durum açık kalma modu | Entegrasyon portları',
+            en: 'Steel chassis | Fail-safe mode | Integration ready'
+        },
+        imageUrl: 'https://source.unsplash.com/featured/?security-turnstile&sig=16'
+    }
+];
+
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', () => {
     updatePageLanguage();
@@ -54,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const navMenu = document.getElementById('navMenu');
-    
+
     if (mobileMenuToggle && navMenu) {
         mobileMenuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -73,9 +155,19 @@ document.addEventListener('DOMContentLoaded', () => {
 // Load featured products
 async function loadFeaturedProducts() {
     try {
-        const products = await getFeaturedProducts();
+        let products = [];
+
+        try {
+            products = await getFeaturedProducts();
+        } catch (apiError) {
+            console.error('API error for featured products, switching to fallback:', apiError);
+        }
+
+        if (!products || products.length === 0) {
+            products = fallbackProducts;
+        }
         const container = document.getElementById('featuredProducts');
-        
+
         if (!container) return;
 
         if (products.length === 0) {
@@ -104,7 +196,22 @@ async function loadFeaturedProducts() {
         console.error('Error loading featured products:', error);
         const container = document.getElementById('featuredProducts');
         if (container) {
-            container.innerHTML = '<p data-tr="Ürünler yüklenirken bir hata oluştu." data-en="An error occurred while loading products.">Ürünler yüklenirken bir hata oluştu.</p>';
+            container.innerHTML = fallbackProducts.slice(0, 3).map(product => {
+                const lang = getCurrentLanguage();
+                return `
+                    <div class="product-card" data-category="${product.category[lang]?.toLowerCase().replace(/\s+/g, '-') || ''}">
+                        <div class="product-image">
+                            <img src="${product.imageUrl}" alt="${product.name[lang]}" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <h3>${product.name[lang]}</h3>
+                            <p>${product.description[lang]}</p>
+                            ${product.technicalSpecs?.[lang] ? `<div class="product-specs">${product.technicalSpecs[lang]}</div>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            updatePageLanguage();
         }
     }
 }
@@ -112,9 +219,15 @@ async function loadFeaturedProducts() {
 // Load all products
 async function loadAllProducts() {
     try {
-        const products = await getAllProducts();
+        let products = [];
+
+        try {
+            products = await getAllProducts();
+        } catch (apiError) {
+            console.error('API error for products, switching to fallback:', apiError);
+        }
         const container = document.getElementById('productsGrid');
-        
+
         if (!container) return;
 
         const loadingElement = document.getElementById('loadingProducts');
@@ -122,9 +235,8 @@ async function loadAllProducts() {
             loadingElement.style.display = 'none';
         }
 
-        if (products.length === 0) {
-            container.innerHTML = '<p data-tr="Henüz ürün bulunmamaktadır." data-en="No products yet.">Henüz ürün bulunmamaktadır.</p>';
-            return;
+        if (!products || products.length === 0) {
+            products = fallbackProducts;
         }
 
         const lang = getCurrentLanguage();
@@ -153,7 +265,23 @@ async function loadAllProducts() {
             if (loadingElement) {
                 loadingElement.style.display = 'none';
             }
-            container.innerHTML = '<p data-tr="Ürünler yüklenirken bir hata oluştu." data-en="An error occurred while loading products.">Ürünler yüklenirken bir hata oluştu.</p>';
+            const lang = getCurrentLanguage();
+            container.innerHTML = fallbackProducts.map(product => {
+                const category = product.category[lang]?.toLowerCase().replace(/\s+/g, '-') || '';
+                return `
+                    <div class="product-card" data-category="${category}">
+                        <div class="product-image">
+                            <img src="${product.imageUrl}" alt="${product.name[lang]}" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <h3>${product.name[lang]}</h3>
+                            <p>${product.description[lang]}</p>
+                            ${product.technicalSpecs?.[lang] ? `<div class="product-specs">${product.technicalSpecs[lang]}</div>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            updatePageLanguage();
         }
     }
 }
@@ -163,7 +291,7 @@ async function loadReferences() {
     try {
         const references = await getAllReferences();
         const container = document.getElementById('referencesLogos');
-        
+
         if (!container) return;
 
         if (references.length === 0) {
@@ -191,7 +319,7 @@ async function loadAllReferences() {
     try {
         const references = await getAllReferences();
         const container = document.getElementById('referencesGrid');
-        
+
         if (!container) return;
 
         const loadingElement = document.getElementById('loadingReferences');
