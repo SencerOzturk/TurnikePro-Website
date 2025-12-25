@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="İletişim sayfası. Bize ulaşın, sorularınızı sorun, teklif alın.">
+    <title data-tr="İletişim" data-en="Contact">İletişim | TurnikePro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.API_BASE_URL = window.API_BASE_URL || 'https://turnike-backend.onrender.com/api';
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">TURNİKE<span>PRO</span></a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
+                    <li><a href="about.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a></li>
+                    <li><a href="products.html" data-tr="Ürünler" data-en="Products">Ürünler</a></li>
+                    <li><a href="references.html" data-tr="Referanslar" data-en="References">Referanslar</a></li>
+                    <li><a href="contact.html" class="active" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="lang-switcher" id="langSwitcher">EN</button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-tr="İletişim" data-en="Contact">İletişim</h1>
+            <p data-tr="Bizimle iletişime geçin, sorularınızı sorun" data-en="Get in touch with us, ask your questions">Bizimle iletişime geçin, sorularınızı sorun</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info-section">
+                    <h2 data-tr="İletişim Bilgileri" data-en="Contact Information">İletişim Bilgileri</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h3 data-tr="E-posta" data-en="Email">E-posta</h3>
+                                <p>info@turnikepro.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h3 data-tr="Telefon" data-en="Phone">Telefon</h3>
+                                <p>+90 (212) 123 45 67</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h3 data-tr="Adres" data-en="Address">Adres</h3>
+                                <p data-tr="İstanbul, Türkiye" data-en="Istanbul, Turkey">İstanbul, Türkiye</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div>
+                                <h3 data-tr="Çalışma Saatleri" data-en="Working Hours">Çalışma Saatleri</h3>
+                                <p data-tr="Pazartesi - Cuma: 09:00 - 18:00" data-en="Monday - Friday: 09:00 - 18:00">Pazartesi - Cuma: 09:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-section">
+                    <h2 data-tr="Bize Mesaj Gönderin" data-en="Send Us a Message">Bize Mesaj Gönderin</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" data-tr="Ad Soyad" data-en="Full Name">Ad Soyad</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-tr="E-posta" data-en="Email">E-posta</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-tr="Mesaj" data-en="Message">Mesaj</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-tr="Gönder" data-en="Send">Gönder</button>
+                    </form>
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (Optional) -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-placeholder">
+                <p data-tr="Google Maps entegrasyonu buraya eklenebilir" data-en="Google Maps integration can be added here">Google Maps entegrasyonu buraya eklenebilir</p>
+                <!-- Google Maps iframe can be added here -->
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h3>
+                    <p data-tr="Profesyonel turnike ve erişim kontrol sistemleri çözümleri sunan lider firma." data-en="Leading company offering professional turnstile and access control system solutions.">Profesyonel turnike ve erişim kontrol sistemleri çözümleri sunan lider firma.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-tr="Hızlı Bağlantılar" data-en="Quick Links">Hızlı Bağlantılar</h3>
+                    <ul>
+                        <li><a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
+                        <li><a href="about.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a></li>
+                        <li><a href="products.html" data-tr="Ürünler" data-en="Products">Ürünler</a></li>
+                        <li><a href="references.html" data-tr="Referanslar" data-en="References">Referanslar</a></li>
+                        <li><a href="contact.html" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-tr="İletişim" data-en="Contact">İletişim</h3>
+                    <ul class="contact-info">
+                        <li>📧 info@turnikepro.com</li>
+                        <li>📞 +90 (212) 123 45 67</li>
+                        <li>📍 İstanbul, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TurnikePro. <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved.">Tüm hakları saklıdır.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Handle contact form submission
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+            
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    message: document.getElementById('message').value
+                };
+                
+                try {
+                    const response = await submitContactForm(formData);
+                    formMessage.className = 'form-message success';
+                    formMessage.textContent = getCurrentLanguage() === 'tr' 
+                        ? 'Mesajınız başarıyla gönderildi! Teşekkür ederiz.' 
+                        : 'Your message has been sent successfully! Thank you.';
+                    form.reset();
+                } catch (error) {
+                    formMessage.className = 'form-message error';
+                    formMessage.textContent = getCurrentLanguage() === 'tr' 
+                        ? 'Bir hata oluştu. Lütfen tekrar deneyin.' 
+                        : 'An error occurred. Please try again.';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

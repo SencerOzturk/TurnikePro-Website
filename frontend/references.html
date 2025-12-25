@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gerçekleştirdiğimiz projeler ve referanslarımız. Başarılı kurumsal çözümlerimiz.">
+    <title data-tr="Referanslar" data-en="References">Referanslar | TurnikePro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.API_BASE_URL = window.API_BASE_URL || 'https://turnike-backend.onrender.com/api';
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">TURNİKE<span>PRO</span></a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
+                    <li><a href="about.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a></li>
+                    <li><a href="products.html" data-tr="Ürünler" data-en="Products">Ürünler</a></li>
+                    <li><a href="references.html" class="active" data-tr="Referanslar" data-en="References">Referanslar</a></li>
+                    <li><a href="contact.html" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="lang-switcher" id="langSwitcher">EN</button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-tr="Referanslarımız" data-en="Our References">Referanslarımız</h1>
+            <p data-tr="Başarıyla tamamladığımız projeler ve güvenilir çözümlerimiz" data-en="Projects we have successfully completed and our reliable solutions">Başarıyla tamamladığımız projeler ve güvenilir çözümlerimiz</p>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section class="references-page">
+        <div class="container">
+            <div class="references-grid" id="referencesGrid">
+                <!-- References will be loaded dynamically -->
+                <div class="loading" id="loadingReferences">
+                    <p data-tr="Referanslar yükleniyor..." data-en="Loading references...">Referanslar yükleniyor...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h3>
+                    <p data-tr="Profesyonel turnike ve erişim kontrol sistemleri çözümleri sunan lider firma." data-en="Leading company offering professional turnstile and access control system solutions.">Profesyonel turnike ve erişim kontrol sistemleri çözümleri sunan lider firma.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-tr="Hızlı Bağlantılar" data-en="Quick Links">Hızlı Bağlantılar</h3>
+                    <ul>
+                        <li><a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
+                        <li><a href="about.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a></li>
+                        <li><a href="products.html" data-tr="Ürünler" data-en="Products">Ürünler</a></li>
+                        <li><a href="references.html" data-tr="Referanslar" data-en="References">Referanslar</a></li>
+                        <li><a href="contact.html" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-tr="İletişim" data-en="Contact">İletişim</h3>
+                    <ul class="contact-info">
+                        <li>📧 info@turnikepro.com</li>
+                        <li>📞 +90 (212) 123 45 67</li>
+                        <li>📍 İstanbul, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TurnikePro. <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved.">Tüm hakları saklıdır.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Load references on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAllReferences();
+        });
+    </script>
+</body>
+</html>
+

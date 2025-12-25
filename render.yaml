@@ -1,0 +1,18 @@
+# Render configuration file for backend deployment
+services:
+  - type: web
+    name: turnike-backend
+    env: node
+    region: frankfurt  # Change to your preferred region
+    plan: free  # or starter, standard, etc.
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false  # Set this manually in Render dashboard
+    rootDir: backend
+
