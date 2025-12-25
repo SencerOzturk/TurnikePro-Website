@@ -1,132 +1,373 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Turnike ve erişim kontrol sistemleri ürün kataloğu. Tripod, tam boy, bariyerli turnike modelleri.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Turnike ve erişim kontrol sistemleri ürün kataloğu. Tripod, tam boy, bariyerli turnike modelleri."
+    />
     <title data-tr="Ürünler" data-en="Products">Ürünler | TurnikePro</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <script>
-        window.API_BASE_URL = window.API_BASE_URL || 'https://turnike-backend.onrender.com/api';
+      window.API_BASE_URL =
+        window.API_BASE_URL || "https://turnike-backend.onrender.com/api";
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <a href="index.html">TURNİKE<span>PRO</span></a>
-                </div>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
-                    <li><a href="about.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a></li>
-                    <li><a href="products.html" class="active" data-tr="Ürünler" data-en="Products">Ürünler</a></li>
-                    <li><a href="references.html" data-tr="Referanslar" data-en="References">Referanslar</a></li>
-                    <li><a href="contact.html" data-tr="İletişim" data-en="Contact">İletişim</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button class="lang-switcher" id="langSwitcher">EN</button>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </div>
+      <div class="container">
+        <div class="nav-wrapper">
+          <div class="logo">
+            <a href="index.html">TURNİKE<span>PRO</span></a>
+          </div>
+          <ul class="nav-menu" id="navMenu">
+            <li>
+              <a href="index.html" data-tr="Ana Sayfa" data-en="Home"
+                >Ana Sayfa</a
+              >
+            </li>
+            <li>
+              <a href="about.html" data-tr="Hakkımızda" data-en="About Us"
+                >Hakkımızda</a
+              >
+            </li>
+            <li>
+              <a
+                href="products.html"
+                class="active"
+                data-tr="Ürünler"
+                data-en="Products"
+                >Ürünler</a
+              >
+            </li>
+            <li>
+              <a
+                href="references.html"
+                data-tr="Referanslar"
+                data-en="References"
+                >Referanslar</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" data-tr="İletişim" data-en="Contact"
+                >İletişim</a
+              >
+            </li>
+          </ul>
+          <div class="nav-actions">
+            <button class="lang-switcher" id="langSwitcher">EN</button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Page Header -->
     <section class="page-header">
-        <div class="container">
-            <h1 data-tr="Ürünlerimiz" data-en="Our Products">Ürünlerimiz</h1>
-            <p data-tr="Geniş ürün yelpazemizden ihtiyacınıza uygun çözümü bulun" data-en="Find the solution that suits your needs from our wide product range">Geniş ürün yelpazemizden ihtiyacınıza uygun çözümü bulun</p>
+      <div class="container">
+        <h1 data-tr="Ürünlerimiz" data-en="Our Products">Ürünlerimiz</h1>
+        <p
+          data-tr="Geniş ürün yelpazemizden ihtiyacınıza uygun çözümü bulun"
+          data-en="Find the solution that suits your needs from our wide product range"
+        >
+          Geniş ürün yelpazemizden ihtiyacınıza uygun çözümü bulun
+        </p>
+      </div>
+    </section>
+
+    <!-- Spotlight Gallery -->
+    <section class="product-spotlight">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-tr="Turnike Vitrini" data-en="Turnstile Showcase">
+            Turnike Vitrini
+          </h2>
+          <p
+            data-tr="En çok tercih edilen hız geçiş ve tripod çözümlerimizden seçkiler"
+            data-en="A glimpse of our most popular speed-gate and tripod solutions"
+          >
+            En çok tercih edilen hız geçiş ve tripod çözümlerimizden seçkiler
+          </p>
         </div>
+        <div class="spotlight-grid">
+          <div class="spotlight-card" data-category="tripod">
+            <div class="spotlight-image">
+              <img
+                src="https://source.unsplash.com/1200x800/?turnstile,tripod"
+                alt="Tripod Turnike"
+              />
+            </div>
+            <div class="spotlight-meta">
+              <span data-tr="Tripod" data-en="Tripod">Tripod</span>
+              <h3 data-tr="Pulse Serisi" data-en="Pulse Series">
+                Pulse Serisi
+              </h3>
+              <p
+                data-tr="Yoğun insan trafiği için kompakt ve dayanıklı gövde"
+                data-en="Compact, durable chassis built for heavy footfall"
+              >
+                Yoğun insan trafiği için kompakt ve dayanıklı gövde
+              </p>
+            </div>
+          </div>
+          <div class="spotlight-card" data-category="barrier">
+            <div class="spotlight-image">
+              <img
+                src="https://source.unsplash.com/1200x800/?turnstile,access-control"
+                alt="Hızlı Geçiş Turnikesi"
+              />
+            </div>
+            <div class="spotlight-meta">
+              <span data-tr="Hızlı Geçiş" data-en="Speed Gate"
+                >Hızlı Geçiş</span
+              >
+              <h3 data-tr="Aurora Flow" data-en="Aurora Flow">Aurora Flow</h3>
+              <p
+                data-tr="Cam kanatlı, sessiz ve titreşimsiz motor sistemi"
+                data-en="Glass wing, silent and vibration-free drive"
+              >
+                Cam kanatlı, sessiz ve titreşimsiz motor sistemi
+              </p>
+            </div>
+          </div>
+          <div class="spotlight-card" data-category="full-height">
+            <div class="spotlight-image">
+              <img
+                src="https://source.unsplash.com/1200x800/?full-height-turnstile"
+                alt="Tam Boy Turnike"
+              />
+            </div>
+            <div class="spotlight-meta">
+              <span data-tr="Tam Boy" data-en="Full Height">Tam Boy</span>
+              <h3 data-tr="Fortress 360" data-en="Fortress 360">
+                Fortress 360
+              </h3>
+              <p
+                data-tr="Çoklu geçiş güvenliği için 360° çelik bariyer"
+                data-en="360° steel cage for maximum perimeter security"
+              >
+                Çoklu geçiş güvenliği için 360° çelik bariyer
+              </p>
+            </div>
+          </div>
+          <div class="spotlight-card" data-category="barrier">
+            <div class="spotlight-image">
+              <img
+                src="https://source.unsplash.com/1200x800/?swing-gate,turnstile"
+                alt="Swing Gate Turnike"
+              />
+            </div>
+            <div class="spotlight-meta">
+              <span data-tr="Swing Gate" data-en="Swing Gate">Swing Gate</span>
+              <h3 data-tr="Velvet Prime" data-en="Velvet Prime">
+                Velvet Prime
+              </h3>
+              <p
+                data-tr="Temassız geçiş için geniş kanatlı premium tasarım"
+                data-en="Wide wing premium design for contactless access"
+              >
+                Temassız geçiş için geniş kanatlı premium tasarım
+              </p>
+            </div>
+          </div>
+          <div class="spotlight-card" data-category="tripod">
+            <div class="spotlight-image">
+              <img
+                src="https://source.unsplash.com/1200x800/?tripod-turnstile"
+                alt="Endüstriyel Tripod"
+              />
+            </div>
+            <div class="spotlight-meta">
+              <span data-tr="Endüstriyel" data-en="Industrial"
+                >Endüstriyel</span
+              >
+              <h3 data-tr="Core Steel" data-en="Core Steel">Core Steel</h3>
+              <p
+                data-tr="IP54 koruma ile dış ortam uyumlu"
+                data-en="Outdoor ready with IP54 protection"
+              >
+                IP54 koruma ile dış ortam uyumlu
+              </p>
+            </div>
+          </div>
+          <div class="spotlight-card" data-category="full-height">
+            <div class="spotlight-image">
+              <img
+                src="https://source.unsplash.com/1200x800/?security-turnstile"
+                alt="Çift Kanatlı Güvenlik Turnikesi"
+              />
+            </div>
+            <div class="spotlight-meta">
+              <span data-tr="Çift Kanat" data-en="Dual Wing">Çift Kanat</span>
+              <h3 data-tr="Guardia Twin" data-en="Guardia Twin">
+                Guardia Twin
+              </h3>
+              <p
+                data-tr="Kritik alanlar için çift yönlü kontrol"
+                data-en="Bi-directional control for critical zones"
+              >
+                Kritik alanlar için çift yönlü kontrol
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Products Section -->
     <section class="products-page">
-        <div class="container">
-            <div class="products-filter">
-                <button class="filter-btn active" data-category="all" data-tr="Tümü" data-en="All">Tümü</button>
-                <button class="filter-btn" data-category="tripod" data-tr="Tripod" data-en="Tripod">Tripod</button>
-                <button class="filter-btn" data-category="full-height" data-tr="Tam Boy" data-en="Full Height">Tam Boy</button>
-                <button class="filter-btn" data-category="barrier" data-tr="Bariyerli" data-en="Barrier">Bariyerli</button>
-            </div>
-            <div class="products-grid" id="productsGrid">
-                <!-- Products will be loaded dynamically -->
-                <div class="loading" id="loadingProducts">
-                    <p data-tr="Ürünler yükleniyor..." data-en="Loading products...">Ürünler yükleniyor...</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="products-filter">
+          <button
+            class="filter-btn active"
+            data-category="all"
+            data-tr="Tümü"
+            data-en="All"
+          >
+            Tümü
+          </button>
+          <button
+            class="filter-btn"
+            data-category="tripod"
+            data-tr="Tripod"
+            data-en="Tripod"
+          >
+            Tripod
+          </button>
+          <button
+            class="filter-btn"
+            data-category="full-height"
+            data-tr="Tam Boy"
+            data-en="Full Height"
+          >
+            Tam Boy
+          </button>
+          <button
+            class="filter-btn"
+            data-category="barrier"
+            data-tr="Bariyerli"
+            data-en="Barrier"
+          >
+            Bariyerli
+          </button>
         </div>
+        <div class="products-grid" id="productsGrid">
+          <!-- Products will be loaded dynamically -->
+          <div class="loading" id="loadingProducts">
+            <p data-tr="Ürünler yükleniyor..." data-en="Loading products...">
+              Ürünler yükleniyor...
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h3>
-                    <p data-tr="Profesyonel turnike ve erişim kontrol sistemleri çözümleri sunan lider firma." data-en="Leading company offering professional turnstile and access control system solutions.">Profesyonel turnike ve erişim kontrol sistemleri çözümleri sunan lider firma.</p>
-                </div>
-                <div class="footer-section">
-                    <h3 data-tr="Hızlı Bağlantılar" data-en="Quick Links">Hızlı Bağlantılar</h3>
-                    <ul>
-                        <li><a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
-                        <li><a href="about.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a></li>
-                        <li><a href="products.html" data-tr="Ürünler" data-en="Products">Ürünler</a></li>
-                        <li><a href="references.html" data-tr="Referanslar" data-en="References">Referanslar</a></li>
-                        <li><a href="contact.html" data-tr="İletişim" data-en="Contact">İletişim</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3 data-tr="İletişim" data-en="Contact">İletişim</h3>
-                    <ul class="contact-info">
-                        <li>📧 info@turnikepro.com</li>
-                        <li>📞 +90 (212) 123 45 67</li>
-                        <li>📍 İstanbul, Türkiye</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 TurnikePro. <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved.">Tüm hakları saklıdır.</span></p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h3>
+            <p
+              data-tr="Profesyonel turnike ve erişim kontrol sistemleri çözümleri sunan lider firma."
+              data-en="Leading company offering professional turnstile and access control system solutions."
+            >
+              Profesyonel turnike ve erişim kontrol sistemleri çözümleri sunan
+              lider firma.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3 data-tr="Hızlı Bağlantılar" data-en="Quick Links">
+              Hızlı Bağlantılar
+            </h3>
+            <ul>
+              <li>
+                <a href="index.html" data-tr="Ana Sayfa" data-en="Home"
+                  >Ana Sayfa</a
+                >
+              </li>
+              <li>
+                <a href="about.html" data-tr="Hakkımızda" data-en="About Us"
+                  >Hakkımızda</a
+                >
+              </li>
+              <li>
+                <a href="products.html" data-tr="Ürünler" data-en="Products"
+                  >Ürünler</a
+                >
+              </li>
+              <li>
+                <a
+                  href="references.html"
+                  data-tr="Referanslar"
+                  data-en="References"
+                  >Referanslar</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" data-tr="İletişim" data-en="Contact"
+                  >İletişim</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3 data-tr="İletişim" data-en="Contact">İletişim</h3>
+            <ul class="contact-info">
+              <li>📧 info@turnikepro.com</li>
+              <li>📞 +90 (212) 123 45 67</li>
+              <li>📍 İstanbul, Türkiye</li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 TurnikePro.
+            <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved."
+              >Tüm hakları saklıdır.</span
+            >
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script src="js/api.js"></script>
     <script src="js/main.js"></script>
     <script>
-        // Load products on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            loadAllProducts();
-            
-            // Filter functionality
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterButtons.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    const category = btn.getAttribute('data-category');
-                    filterProducts(category);
-                });
-            });
+      // Load products on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        loadAllProducts();
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        filterButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            filterButtons.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            const category = btn.getAttribute("data-category");
+            filterProducts(category);
+          });
         });
+      });
 
-        function filterProducts(category) {
-            const products = document.querySelectorAll('.product-card');
-            products.forEach(product => {
-                if (category === 'all') {
-                    product.style.display = 'block';
-                } else {
-                    const productCategory = product.getAttribute('data-category');
-                    product.style.display = productCategory === category ? 'block' : 'none';
-                }
-            });
-        }
+      function filterProducts(category) {
+        const products = document.querySelectorAll(".product-card");
+        products.forEach((product) => {
+          if (category === "all") {
+            product.style.display = "block";
+          } else {
+            const productCategory = product.getAttribute("data-category");
+            product.style.display =
+              productCategory === category ? "block" : "none";
+          }
+        });
+      }
     </script>
-</body>
+  </body>
 </html>
-

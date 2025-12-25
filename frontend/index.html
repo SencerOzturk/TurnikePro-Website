@@ -1,149 +1,328 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Profesyonel turnike ve erişim kontrol sistemleri çözümleri. Güvenli, modern ve teknolojik erişim kontrol çözümleri.">
-    <meta name="keywords" content="turnike, erişim kontrol, güvenlik sistemleri, access control">
-    <title data-tr="Ana Sayfa" data-en="Home">Ana Sayfa | Turnike Erişim Kontrol Sistemleri</title>
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Profesyonel turnike ve erişim kontrol sistemleri çözümleri. Güvenli, modern ve teknolojik erişim kontrol çözümleri."
+    />
+    <meta
+      name="keywords"
+      content="turnike, erişim kontrol, güvenlik sistemleri, access control"
+    />
+    <title data-tr="Ana Sayfa" data-en="Home">
+      Ana Sayfa | Turnike Erişim Kontrol Sistemleri
+    </title>
+    <link rel="stylesheet" href="css/style.css" />
     <script>
-        // Set API base URL - Netlify will replace this during build
-        // For production, update this to your Render backend URL
-        window.API_BASE_URL = window.API_BASE_URL || 'https://turnike-backend.onrender.com/api';
+      // Set API base URL - Netlify will replace this during build
+      // For production, update this to your Render backend URL
+      window.API_BASE_URL =
+        window.API_BASE_URL || "https://turnike-backend.onrender.com/api";
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <a href="index.html">TURNİKE<span>PRO</span></a>
-                </div>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="active" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
-                    <li><a href="about.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a></li>
-                    <li><a href="products.html" data-tr="Ürünler" data-en="Products">Ürünler</a></li>
-                    <li><a href="references.html" data-tr="Referanslar" data-en="References">Referanslar</a></li>
-                    <li><a href="contact.html" data-tr="İletişim" data-en="Contact">İletişim</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button class="lang-switcher" id="langSwitcher">EN</button>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </div>
+      <div class="container">
+        <div class="nav-wrapper">
+          <div class="logo">
+            <a href="index.html">TURNİKE<span>PRO</span></a>
+          </div>
+          <ul class="nav-menu" id="navMenu">
+            <li>
+              <a
+                href="index.html"
+                class="active"
+                data-tr="Ana Sayfa"
+                data-en="Home"
+                >Ana Sayfa</a
+              >
+            </li>
+            <li>
+              <a href="about.html" data-tr="Hakkımızda" data-en="About Us"
+                >Hakkımızda</a
+              >
+            </li>
+            <li>
+              <a href="products.html" data-tr="Ürünler" data-en="Products"
+                >Ürünler</a
+              >
+            </li>
+            <li>
+              <a
+                href="references.html"
+                data-tr="Referanslar"
+                data-en="References"
+                >Referanslar</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" data-tr="İletişim" data-en="Contact"
+                >İletişim</a
+              >
+            </li>
+          </ul>
+          <div class="nav-actions">
+            <button class="lang-switcher" id="langSwitcher">EN</button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 data-tr="Güvenli Erişim Kontrol Çözümleri" data-en="Secure Access Control Solutions">Güvenli Erişim Kontrol Çözümleri</h1>
-                <p data-tr="Modern teknoloji ile donatılmış, güvenilir ve profesyonel turnike sistemleri" data-en="Reliable and professional turnstile systems equipped with modern technology">Modern teknoloji ile donatılmış, güvenilir ve profesyonel turnike sistemleri</p>
-                <div class="hero-buttons">
-                    <a href="products.html" class="btn btn-primary" data-tr="Ürünlerimizi İnceleyin" data-en="View Our Products">Ürünlerimizi İnceleyin</a>
-                    <a href="contact.html" class="btn btn-secondary" data-tr="İletişime Geçin" data-en="Contact Us">İletişime Geçin</a>
-                </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1
+            data-tr="Güvenli Erişim Kontrol Çözümleri"
+            data-en="Secure Access Control Solutions"
+          >
+            Güvenli Erişim Kontrol Çözümleri
+          </h1>
+          <p
+            data-tr="Modern teknoloji ile donatılmış, güvenilir ve profesyonel turnike sistemleri"
+            data-en="Reliable and professional turnstile systems equipped with modern technology"
+          >
+            Modern teknoloji ile donatılmış, güvenilir ve profesyonel turnike
+            sistemleri
+          </p>
+          <div class="hero-buttons">
+            <a
+              href="products.html"
+              class="btn btn-primary"
+              data-tr="Ürünlerimizi İnceleyin"
+              data-en="View Our Products"
+              >Ürünlerimizi İnceleyin</a
+            >
+            <a
+              href="contact.html"
+              class="btn btn-secondary"
+              data-tr="İletişime Geçin"
+              data-en="Contact Us"
+              >İletişime Geçin</a
+            >
+          </div>
+          <div class="hero-badges">
+            <div class="badge-card">
+              <span
+                class="badge-label"
+                data-tr="7/24 Güvenlik"
+                data-en="24/7 Security"
+                >7/24 Güvenlik</span
+              >
+              <p
+                data-tr="Gerçek zamanlı erişim kontrolü"
+                data-en="Real-time access control"
+              >
+                Gerçek zamanlı erişim kontrolü
+              </p>
             </div>
+            <div class="badge-card">
+              <span
+                class="badge-label"
+                data-tr="Yüksek Hız"
+                data-en="High Speed"
+                >Yüksek Hız</span
+              >
+              <p
+                data-tr="Yoğun geçişlere uygun hız"
+                data-en="Throughput for busy hubs"
+              >
+                Yoğun geçişlere uygun hız
+              </p>
+            </div>
+            <div class="badge-card">
+              <span
+                class="badge-label"
+                data-tr="Akıllı Entegrasyon"
+                data-en="Smart Integration"
+                >Akıllı Entegrasyon</span
+              >
+              <p
+                data-tr="Kart, QR, biometrik destek"
+                data-en="Cards, QR, biometric ready"
+              >
+                Kart, QR, biometrik destek
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Featured Products Section -->
     <section class="featured-products">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-tr="Öne Çıkan Ürünlerimiz" data-en="Featured Products">Öne Çıkan Ürünlerimiz</h2>
-                <p data-tr="Geniş ürün yelpazemizden seçilen öne çıkan çözümlerimiz" data-en="Selected featured solutions from our wide product range">Geniş ürün yelpazemizden seçilen öne çıkan çözümlerimiz</p>
-            </div>
-            <div class="products-grid" id="featuredProducts">
-                <!-- Products will be loaded dynamically -->
-            </div>
-            <div class="text-center">
-                <a href="products.html" class="btn btn-outline" data-tr="Tüm Ürünleri Görüntüle" data-en="View All Products">Tüm Ürünleri Görüntüle</a>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 data-tr="Öne Çıkan Ürünlerimiz" data-en="Featured Products">
+            Öne Çıkan Ürünlerimiz
+          </h2>
+          <p
+            data-tr="Geniş ürün yelpazemizden seçilen öne çıkan çözümlerimiz"
+            data-en="Selected featured solutions from our wide product range"
+          >
+            Geniş ürün yelpazemizden seçilen öne çıkan çözümlerimiz
+          </p>
         </div>
+        <div class="products-grid" id="featuredProducts">
+          <!-- Products will be loaded dynamically -->
+        </div>
+        <div class="text-center">
+          <a
+            href="products.html"
+            class="btn btn-outline"
+            data-tr="Tüm Ürünleri Görüntüle"
+            data-en="View All Products"
+            >Tüm Ürünleri Görüntüle</a
+          >
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section class="about-preview">
-        <div class="container">
-            <div class="about-preview-content">
-                <div class="about-preview-text">
-                    <h2 data-tr="Güvenilir Erişim Kontrol Çözümleri" data-en="Reliable Access Control Solutions">Güvenilir Erişim Kontrol Çözümleri</h2>
-                    <p data-tr="Yılların deneyimi ile sektörde öncü konumda bulunan firmamız, modern teknoloji ve kaliteli hizmet anlayışı ile müşterilerimize en iyi çözümleri sunmaktadır." data-en="Our company, which is a leader in the industry with years of experience, offers the best solutions to our customers with modern technology and quality service approach.">Yılların deneyimi ile sektörde öncü konumda bulunan firmamız, modern teknoloji ve kaliteli hizmet anlayışı ile müşterilerimize en iyi çözümleri sunmaktadır.</p>
-                    <a href="about.html" class="btn btn-primary" data-tr="Daha Fazla Bilgi" data-en="Learn More">Daha Fazla Bilgi</a>
-                </div>
-                <div class="about-preview-image">
-                    <div class="image-placeholder">
-                        <span data-tr="Kurumsal Görsel" data-en="Corporate Image">Kurumsal Görsel</span>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="about-preview-content">
+          <div class="about-preview-text">
+            <h2
+              data-tr="Güvenilir Erişim Kontrol Çözümleri"
+              data-en="Reliable Access Control Solutions"
+            >
+              Güvenilir Erişim Kontrol Çözümleri
+            </h2>
+            <p
+              data-tr="Yılların deneyimi ile sektörde öncü konumda bulunan firmamız, modern teknoloji ve kaliteli hizmet anlayışı ile müşterilerimize en iyi çözümleri sunmaktadır."
+              data-en="Our company, which is a leader in the industry with years of experience, offers the best solutions to our customers with modern technology and quality service approach."
+            >
+              Yılların deneyimi ile sektörde öncü konumda bulunan firmamız,
+              modern teknoloji ve kaliteli hizmet anlayışı ile müşterilerimize
+              en iyi çözümleri sunmaktadır.
+            </p>
+            <a
+              href="about.html"
+              class="btn btn-primary"
+              data-tr="Daha Fazla Bilgi"
+              data-en="Learn More"
+              >Daha Fazla Bilgi</a
+            >
+          </div>
+          <div class="about-preview-image">
+            <div class="image-placeholder">
+              <span data-tr="Kurumsal Görsel" data-en="Corporate Image"
+                >Kurumsal Görsel</span
+              >
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- References Section -->
     <section class="references-preview">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-tr="Referanslarımız" data-en="Our References">Referanslarımız</h2>
-                <p data-tr="Güvenilir çözümlerimiz ile hizmet verdiğimiz kurumlar" data-en="Institutions we serve with our reliable solutions">Güvenilir çözümlerimiz ile hizmet verdiğimiz kurumlar</p>
-            </div>
-            <div class="references-logos" id="referencesLogos">
-                <!-- References will be loaded dynamically -->
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 data-tr="Referanslarımız" data-en="Our References">
+            Referanslarımız
+          </h2>
+          <p
+            data-tr="Güvenilir çözümlerimiz ile hizmet verdiğimiz kurumlar"
+            data-en="Institutions we serve with our reliable solutions"
+          >
+            Güvenilir çözümlerimiz ile hizmet verdiğimiz kurumlar
+          </p>
         </div>
+        <div class="references-logos" id="referencesLogos">
+          <!-- References will be loaded dynamically -->
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h3>
-                    <p data-tr="Profesyonel turnike ve erişim kontrol sistemleri çözümleri sunan lider firma." data-en="Leading company offering professional turnstile and access control system solutions.">Profesyonel turnike ve erişim kontrol sistemleri çözümleri sunan lider firma.</p>
-                </div>
-                <div class="footer-section">
-                    <h3 data-tr="Hızlı Bağlantılar" data-en="Quick Links">Hızlı Bağlantılar</h3>
-                    <ul>
-                        <li><a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
-                        <li><a href="about.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a></li>
-                        <li><a href="products.html" data-tr="Ürünler" data-en="Products">Ürünler</a></li>
-                        <li><a href="references.html" data-tr="Referanslar" data-en="References">Referanslar</a></li>
-                        <li><a href="contact.html" data-tr="İletişim" data-en="Contact">İletişim</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3 data-tr="İletişim" data-en="Contact">İletişim</h3>
-                    <ul class="contact-info">
-                        <li>📧 info@turnikepro.com</li>
-                        <li>📞 +90 (212) 123 45 67</li>
-                        <li>📍 İstanbul, Türkiye</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 TurnikePro. <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved.">Tüm hakları saklıdır.</span></p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h3>
+            <p
+              data-tr="Profesyonel turnike ve erişim kontrol sistemleri çözümleri sunan lider firma."
+              data-en="Leading company offering professional turnstile and access control system solutions."
+            >
+              Profesyonel turnike ve erişim kontrol sistemleri çözümleri sunan
+              lider firma.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3 data-tr="Hızlı Bağlantılar" data-en="Quick Links">
+              Hızlı Bağlantılar
+            </h3>
+            <ul>
+              <li>
+                <a href="index.html" data-tr="Ana Sayfa" data-en="Home"
+                  >Ana Sayfa</a
+                >
+              </li>
+              <li>
+                <a href="about.html" data-tr="Hakkımızda" data-en="About Us"
+                  >Hakkımızda</a
+                >
+              </li>
+              <li>
+                <a href="products.html" data-tr="Ürünler" data-en="Products"
+                  >Ürünler</a
+                >
+              </li>
+              <li>
+                <a
+                  href="references.html"
+                  data-tr="Referanslar"
+                  data-en="References"
+                  >Referanslar</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" data-tr="İletişim" data-en="Contact"
+                  >İletişim</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3 data-tr="İletişim" data-en="Contact">İletişim</h3>
+            <ul class="contact-info">
+              <li>📧 info@turnikepro.com</li>
+              <li>📞 +90 (212) 123 45 67</li>
+              <li>📍 İstanbul, Türkiye</li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 TurnikePro.
+            <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved."
+              >Tüm hakları saklıdır.</span
+            >
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script src="js/api.js"></script>
     <script src="js/main.js"></script>
     <script>
-        // Load featured products on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            loadFeaturedProducts();
-            loadReferences();
-        });
+      // Load featured products on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        loadFeaturedProducts();
+        loadReferences();
+      });
     </script>
-</body>
+  </body>
 </html>
-

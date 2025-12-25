@@ -1,0 +1,148 @@
+Mantık şu olacak:
+
+Kodları GitHub’a koyacağız
+
+Backend’i Render çalıştıracak
+
+Frontend’i Netlify gösterecek
+
+Verileri MongoDB saklayacak
+
+1️⃣ ADIM: PROJEYİ GITHUB’A KOYMA
+
+(= Kodları internete yükleme)
+
+GitHub = Kodların durduğu depo
+
+📁 Proje klasörüne gir
+
+(backend + frontend olan ana klasör)
+
+🖥️ Terminal / CMD aç ve sırayla yaz
+git init
+git add .
+git commit -m "ilk deploy"
+
+🌍 GitHub’a gir
+
+New repository de
+
+Adı: turnike-website
+
+Create repository
+
+🔗 GitHub’ın verdiği komutları yapıştır
+git remote add origin https://github.com/KULLANICI_ADI/turnike-website.git
+git branch -M main
+git push -u origin main
+
+
+🎉 BİTTİ
+
+Kodların artık GitHub’da
+
+2️⃣ ADIM: VERİTABANI (MongoDB Atlas)
+
+(= Ürünler, formlar burada saklanacak)
+
+🌍 https://www.mongodb.com/atlas
+
+Sign up
+
+Free (M0) seç
+
+➕ Cluster oluştur
+
+Next → Next → Create
+
+👤 Kullanıcı oluştur
+
+Username: admin
+
+Password: 123456 (örnek)
+
+🌐 Her yerden erişime izin ver
+
+IP Address → 0.0.0.0/0
+
+🔗 Connection String al
+
+Şuna benzeyecek:
+
+mongodb+srv://admin:123456@cluster0.xxxxx.mongodb.net/turnike
+
+
+📌 Bunu bir yere kopyala, birazdan lazım olacak
+
+3️⃣ ADIM: BACKEND CANLIYA ALMA (Render)
+
+(= Node.js API çalışacak)
+
+🌍 https://render.com
+
+GitHub ile login
+
+➕ New → Web Service
+
+GitHub repo’yu seç
+
+⚙️ Ayarları ŞÖYLE yap:
+Alan	Değer
+Name	turnike-backend
+Root Directory	backend
+Build Command	npm install
+Start Command	node server.js
+🌱 Environment Variable ekle
+MONGODB_URI = (Atlas’tan aldığın link)
+
+▶️ Create Web Service
+
+⏳ 2–5 dakika bekle
+
+🎉 Sana bir link verir:
+
+https://turnike-backend.onrender.com
+
+4️⃣ ADIM: FRONTEND CANLIYA ALMA (Netlify)
+
+(= Siteyi kullanıcılar görecek)
+
+🌍 https://netlify.com
+
+GitHub ile login
+
+➕ Add new site → Import from GitHub
+
+Repo’yu seç
+
+⚙️ Ayarlar:
+Alan	Değer
+Base directory	frontend
+Build command	boş
+Publish directory	frontend
+🌱 Environment Variable
+API_URL = https://turnike-backend.onrender.com/api
+
+▶️ Deploy
+
+🎉 Sana bir site linki verir:
+
+https://turnike-site.netlify.app
+
+5️⃣ ADIM: KONTROL (ÇALIŞIYOR MU?)
+🔍 Siteyi aç
+
+Ana sayfa açılıyor mu? ✅
+
+Ürünler geliyor mu? ✅
+
+İletişim formu gönderiliyor mu? ✅
+
+🔍 Backend test
+
+Tarayıcıya yaz:
+
+https://turnike-backend.onrender.com/api/products
+
+
+JSON geliyorsa = TAMAM 🎯
