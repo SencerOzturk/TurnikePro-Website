@@ -52,7 +52,7 @@ const fallbackProducts = [
             tr: 'Paslanmaz çelik | RFID / QR / Kart desteği | 60 kişi/dk',
             en: 'Stainless steel | RFID / QR / Card ready | 60 ppl/min'
         },
-        imageUrl: 'https://source.unsplash.com/featured/?tripod-turnstile&sig=11'
+        imageUrl: 'images/turnike-1.svg'
     },
     {
         category: { tr: 'Hızlı Geçiş', en: 'Speed Gate' },
@@ -65,7 +65,7 @@ const fallbackProducts = [
             tr: 'Cam kanat | Fırçasız motor | 0.4 sn açılma',
             en: 'Glass wings | Brushless motor | 0.4s opening'
         },
-        imageUrl: 'https://source.unsplash.com/featured/?turnstile,access-control&sig=12'
+        imageUrl: 'images/turnike-2.svg'
     },
     {
         category: { tr: 'Tam Boy', en: 'Full Height' },
@@ -78,7 +78,7 @@ const fallbackProducts = [
             tr: 'Galvanizli çelik | IP54 | Çift yönlü erişim',
             en: 'Galvanized steel | IP54 | Bi-directional'
         },
-        imageUrl: 'https://source.unsplash.com/featured/?full-height-turnstile&sig=13'
+        imageUrl: 'images/turnike-3.svg'
     },
     {
         category: { tr: 'Swing Gate', en: 'Swing Gate' },
@@ -91,7 +91,7 @@ const fallbackProducts = [
             tr: 'Cam kanat | Engelli geçiş genişliği | Sessiz çalışma',
             en: 'Glass wing | ADA width | Silent operation'
         },
-        imageUrl: 'https://source.unsplash.com/featured/?swing-gate,turnstile&sig=14'
+        imageUrl: 'images/turnike-4.svg'
     },
     {
         category: { tr: 'Endüstriyel', en: 'Industrial' },
@@ -104,7 +104,7 @@ const fallbackProducts = [
             tr: 'IP54 | -20°C / +60°C | Ağır hizmet motor',
             en: 'IP54 | -20°C / +60°C | Heavy-duty motor'
         },
-        imageUrl: 'https://source.unsplash.com/featured/?industrial-turnstile&sig=15'
+        imageUrl: 'images/turnike-5.svg'
     },
     {
         category: { tr: 'Çift Kanat', en: 'Dual Wing' },
@@ -117,13 +117,13 @@ const fallbackProducts = [
             tr: 'Çelik gövde | Acil durum açık kalma modu | Entegrasyon portları',
             en: 'Steel chassis | Fail-safe mode | Integration ready'
         },
-        imageUrl: 'https://source.unsplash.com/featured/?security-turnstile&sig=16'
+        imageUrl: 'images/turnike-6.svg'
     }
 ];
 
 function resolveProductImage(product, index) {
     const provided = product?.imageUrl && product.imageUrl.trim();
-    const fallback = fallbackProducts[index % fallbackProducts.length]?.imageUrl || 'https://source.unsplash.com/featured/?turnstile&sig=99';
+    const fallback = fallbackProducts[index % fallbackProducts.length]?.imageUrl || 'images/turnike-1.svg';
     return provided || fallback;
 }
 
