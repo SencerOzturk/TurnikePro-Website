@@ -121,6 +121,12 @@ const fallbackProducts = [
     }
 ];
 
+function resolveProductImage(product, index) {
+    const provided = product?.imageUrl && product.imageUrl.trim();
+    const fallback = fallbackProducts[index % fallbackProducts.length]?.imageUrl || 'https://source.unsplash.com/featured/?turnstile&sig=99';
+    return provided || fallback;
+}
+
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', () => {
     updatePageLanguage();
@@ -175,12 +181,14 @@ async function loadFeaturedProducts() {
             return;
         }
 
-        container.innerHTML = products.slice(0, 3).map(product => {
+        container.innerHTML = products.slice(0, 3).map((product, index) => {
             const lang = getCurrentLanguage();
+            const imageSrc = resolveProductImage(product, index);
+            const fallbackSrc = fallbackProducts[index % fallbackProducts.length]?.imageUrl || imageSrc;
             return `
                 <div class="product-card" data-category="${product.category[lang]?.toLowerCase().replace(/\s+/g, '-') || ''}">
                     <div class="product-image">
-                        <img src="${product.imageUrl}" alt="${product.name[lang]}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'250\'%3E%3Crect width=\'300\' height=\'250\' fill=\'%23f3f4f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%239ca3af\'%3E${encodeURIComponent(product.name[lang])}%3C/text%3E%3C/svg%3E'">
+                        <img src="${imageSrc}" alt="${product.name[lang]}" loading="lazy" onerror="this.onerror=null;this.src='${fallbackSrc}'">
                     </div>
                     <div class="product-content">
                         <h3>${product.name[lang]}</h3>
@@ -240,12 +248,14 @@ async function loadAllProducts() {
         }
 
         const lang = getCurrentLanguage();
-        container.innerHTML = products.map(product => {
+        container.innerHTML = products.map((product, index) => {
             const category = product.category[lang]?.toLowerCase().replace(/\s+/g, '-') || '';
+            const imageSrc = resolveProductImage(product, index);
+            const fallbackSrc = fallbackProducts[index % fallbackProducts.length]?.imageUrl || imageSrc;
             return `
                 <div class="product-card" data-category="${category}">
                     <div class="product-image">
-                        <img src="${product.imageUrl}" alt="${product.name[lang]}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'250\'%3E%3Crect width=\'300\' height=\'250\' fill=\'%23f3f4f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%239ca3af\'%3E${encodeURIComponent(product.name[lang])}%3C/text%3E%3C/svg%3E'">
+                        <img src="${imageSrc}" alt="${product.name[lang]}" loading="lazy" onerror="this.onerror=null;this.src='${fallbackSrc}'">
                     </div>
                     <div class="product-content">
                         <h3>${product.name[lang]}</h3>
