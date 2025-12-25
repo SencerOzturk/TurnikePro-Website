@@ -13,26 +13,27 @@ connectDB();
 const app = express();
 
 // Middleware
-// CORS configuration - allow requests from Netlify and localhost
+// CORS configuration - allow requests from Netlify and localhost, handle preflight
 const allowedOrigins = [
-  'http://localhost:8000',
+  'https://turnikepro.netlify.app',
   'http://localhost:3000',
-  'http://127.0.0.1:8000',
-  process.env.FRONTEND_URL
-].filter(Boolean); // Remove undefined values
+  'http://localhost:8000',
+  'http://127.0.0.1:8000'
+];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV !== 'production') {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error('Not allowed by CORS'));
   },
-  credentials: true
-}));
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
